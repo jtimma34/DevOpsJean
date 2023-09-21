@@ -12,14 +12,14 @@
                         git 'https://github.com/jtimma34/DevOpsJean3.git'
                     }
                 }
-                stage('Compile on Slave1'){
+                stage('Compile on slave1'){
                     agent {label 'slave1'}
                     steps{
                         echo 'compiling...'
                         sh 'mvn compile'
                 }
                 }
-                stage('CodeReview on Slave2'){
+                stage('CodeReview on slave2'){
                     agent {label 'slave2'}
                     steps{
                     
@@ -27,7 +27,7 @@
                         sh 'mvn pmd:pmd'
                     }
                 }
-                stage('UnitTest on Slave2'){
+                stage('UnitTest on slave2'){
                     agent {label 'slave2'}
                     steps{
                     echo 'Testing'
