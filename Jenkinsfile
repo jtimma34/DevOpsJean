@@ -19,7 +19,7 @@
                         sh 'mvn compile'
                 }
                 }
-                stage('CodeReview on slave2'){
+                stage('CodeReview on slave1'){
                     agent {label 'slave2'}
                     steps{
                     
@@ -27,7 +27,7 @@
                         sh 'mvn pmd:pmd'
                     }
                 }
-                stage('UnitTest on slave2'){
+                stage('UnitTest on slave1'){
                     agent {label 'slave2'}
                     steps{
                     echo 'Testing'
